@@ -152,7 +152,7 @@ img {
 }
 
 .button--small {
-  padding: 1.2rem 1.6rem;
+  padding: 1.6rem 3.2rem;
 }
 
 .button__icon {
@@ -313,6 +313,12 @@ nav {
 .portfolio__description {
   margin: 0 auto var(--mb-16) auto;
   max-width: 350px;
+}
+
+.portfolio__buttons {
+  display: flex;
+  justify-content: center;
+  gap: 1.6rem;
 }
 
 .portfolio__button:hover .button__icon {
