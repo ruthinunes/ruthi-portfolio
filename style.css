@@ -140,7 +140,7 @@ img {
   cursor: pointer;
   display: inline-block;
   background-color: var(--first-color);
-  color: #fff;
+  color: #f5f5f5;
   padding: 1.6rem;
   border-radius: 0.8rem;
   font-weight: var(--font-medium);
@@ -412,11 +412,7 @@ nav {
 /*=================== contact ===================*/
 .contact__container {
   justify-items: center;
-  gap: 0;
-}
-
-.contact__container > * {
-  min-width: 150px;
+  gap: 3.2rem;
 }
 
 .contact__information {
@@ -496,7 +492,7 @@ nav {
 }
 
 .footer__social {
-  font-size: 2rem;
+  font-size: 2.4rem;
   margin-right: var(--mb-24);
 }
 
@@ -516,7 +512,7 @@ nav {
 .footer__link,
 .footer__social,
 .footer__copy {
-  color: #fff;
+  color: #f5f5f5;
 }
 
 /*=================== scroll bar ===================*/
@@ -589,6 +585,11 @@ nav {
   .portfolio__data {
     margin: auto;
   }
+
+  .contact__inputs {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
   .footer__links {
     justify-self: center;
   }
@@ -702,10 +703,6 @@ nav {
 
   .portfolio__content {
     column-gap: 5rem;
-  }
-
-  .contact__inputs {
-    grid-template-columns: repeat(2, 1fr);
   }
 }
 
