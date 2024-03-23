@@ -42,6 +42,12 @@ const removeMenuOnClick = (navMenu) => {
   });
 };
 
+const setFooterYear = () => {
+  const year = new Date().getFullYear();
+  document.getElementById("footer-year").innerHTML = year;
+};
+
+// reusable functions
 const addClass = (element, className) => {
   element.classList.add(className);
 };
@@ -50,6 +56,9 @@ const removeClass = (element, className) => {
   element.classList.remove(className);
 };
 
-window.addEventListener("DOMContentLoaded", displayMenu);
+window.addEventListener("DOMContentLoaded", () => {
+  setFooterYear();
+  displayMenu();
+});
 
 window.addEventListener("scroll", scrollHeader);
