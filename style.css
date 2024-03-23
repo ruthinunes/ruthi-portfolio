@@ -122,7 +122,6 @@ img {
 .section__title,
 .section__subtitle {
   text-align: center;
-  margin-bottom: var(--mb-32);
 }
 
 .container {
@@ -314,7 +313,7 @@ nav {
 
 .home__blob {
   fill: var(--first-color);
-  width: 350px;
+  /* width: 350px; */
 }
 
 .home__data {
@@ -324,7 +323,7 @@ nav {
 .home__title {
   font-size: var(--h1-font-size);
   margin-bottom: var(--mb-4);
-  text-shadow: 0px 4px 8px #e1bc57;
+  text-shadow: 1px 1px 5px #e1bc57;
 }
 
 .home__subtitle {
@@ -371,7 +370,7 @@ nav {
 }
 
 .portfolio__content {
-  padding: 2.4rem 1.6rem;
+  padding: 2.4rem;
   background-color: var(--container-color);
   box-shadow: rgba(0, 0, 0, 0.25) 0px 10px 20px,
     rgba(25, 24, 24, 0.3) 0px 6px 6px;
@@ -385,18 +384,19 @@ nav {
 }
 
 .portfolio__data {
-  text-align: center;
   padding-bottom: 2.4rem;
 }
 
 .portfolio__title {
   font-size: var(--h3-font-size);
   margin-bottom: var(--mb-8);
+  text-align: center;
 }
 
 .portfolio__description {
-  margin: 0 auto var(--mb-16) auto;
+  margin: 0 auto var(--mb-24) auto;
   max-width: 350px;
+  text-align: start;
 }
 
 .portfolio__buttons {
@@ -411,8 +411,12 @@ nav {
 
 /*=================== contact ===================*/
 .contact__container {
-  row-gap: 4.8rem;
   justify-items: center;
+  gap: 0;
+}
+
+.contact__container > * {
+  min-width: 150px;
 }
 
 .contact__information {
@@ -562,6 +566,7 @@ nav {
   }
 
   .portfolio__content,
+  .contact__container,
   .footer__container {
     grid-template-columns: repeat(2, 1fr);
   }
@@ -685,5 +690,11 @@ nav {
   }
   .portfolio__content {
     column-gap: 5rem;
+  }
+}
+
+@media screen and (min-width: 1024px) {
+  .section {
+    padding-bottom: 10.4rem;
   }
 }
