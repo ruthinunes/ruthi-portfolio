@@ -454,6 +454,17 @@ nav {
   color: var(--title-color);
 }
 
+.contact__input {
+  width: 100%;
+  background-color: var(--input-color);
+  color: var(--text-color);
+  font-family: var(--body-font);
+  font-size: var(--normal-font-size);
+  border: none;
+  outline: none;
+  padding: 0.4rem 0.8rem 0.8rem 0;
+}
+
 /*=================== footer ===================*/
 .footer__container {
   padding: 3rem;
@@ -688,8 +699,13 @@ nav {
   .footer__container {
     padding: 0;
   }
+
   .portfolio__content {
     column-gap: 5rem;
+  }
+
+  .contact__inputs {
+    grid-template-columns: repeat(2, 1fr);
   }
 }
 
