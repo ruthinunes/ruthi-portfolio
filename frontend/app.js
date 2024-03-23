@@ -75,6 +75,72 @@ const toggleActiveClass = (sectionId, isActive) => {
   }
 };
 
+// form
+const processForm = () => {
+  const name = document.getElementById("name");
+  const email = document.getElementById("email");
+  const project = document.getElementById("project");
+  const message = document.getElementById("message");
+  const sendBtn = document.getElementById("form-button");
+
+  sendBtn.addEventListener("click", (e) => {
+    e.preventDefault();
+    if (
+      name.value !== "" &&
+      project.value !== "" &&
+      message.value !== "" &&
+      validateEmail(email.value)
+    ) {
+      const contactForm = {
+        name: name.value,
+        email: email.value,
+        project: project.value,
+        message: message.value,
+      };
+      sendForm(contactForm);
+      clearFields(name, email, project, message);
+      clearPlaceholders(name, email, project, message);
+    } else {
+      showError(name, email, project, message);
+    }
+  });
+};
+
+const validateEmail = (email) => {
+  const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+  return emailRegex.test(email);
+};
+
+const showError = (name, email, project, message) => {
+  name.setAttribute("placeholder", "Please enter your name");
+  project.setAttribute("placeholder", "Please enter your project idea");
+  message.setAttribute("placeholder", "Please enter your message");
+  if (!validateEmail(email.value)) {
+    email.value = "";
+    email.setAttribute("placeholder", "Please enter a valid email");
+  }
+};
+
+const sendForm = async (contactForm) => {
+  await axios
+    .post("http://localhost:3000/api/contacts", contactForm)
+    .then((res) => console.log(res.data));
+};
+
+const clearFields = (name, email, project, message) => {
+  name.value = "";
+  email.value = "";
+  project.value = "";
+  message.value = "";
+};
+
+const clearPlaceholders = (name, email, project, message) => {
+  name.removeAttribute("placeholder");
+  email.removeAttribute("placeholder");
+  project.removeAttribute("placeholder");
+  message.removeAttribute("placeholder");
+};
+
 // *** FOOTER
 // automatically update footer year
 const setFooterYear = () => {
@@ -94,6 +160,7 @@ const removeClass = (element, className) => {
 window.addEventListener("DOMContentLoaded", () => {
   setFooterYear();
   displayMenu();
+  processForm();
 });
 
 window.addEventListener("scroll", () => {
