@@ -113,6 +113,11 @@
                 2 years of experience in web development knowledge, producing
                 quality work.
               </p>
+              <a href="./assets/nunesCV.pdf" class="button button--flex">
+                Download CV<i
+                  class="fa-solid fa-cloud-arrow-down button__icon"
+                ></i>
+              </a>
             </div>
           </div>
         </div>
@@ -335,8 +340,6 @@
                 ><i class="fa-brands fa-linkedin contact__icon"></i>Linkedin
               </a>
             </div>
-          </div>
-          <div>
             <div class="contact__information">
               <a
                 href="https://github.com/ruthinunes"
@@ -354,6 +357,48 @@
               </a>
             </div>
           </div>
+          <form action="" class="contact__form grid">
+            <div class="contact__inputs grid">
+              <div class="contact__content">
+                <label for="name" class="contact__label">Name</label>
+                <input
+                  type="text"
+                  id="name"
+                  class="contact__input"
+                  autocomplete="name"
+                />
+              </div>
+              <div class="contact__content">
+                <label for="email" class="contact__label">Email</label>
+                <input
+                  type="email"
+                  id="email"
+                  class="contact__input"
+                  autocomplete="email"
+                />
+              </div>
+            </div>
+            <div class="contact__content">
+              <label for="project" class="contact__label">Project</label>
+              <input type="text" id="project" class="contact__input" />
+            </div>
+            <div class="contact__content">
+              <label for="message" class="contact__label">Message</label>
+              <textarea
+                name=""
+                id="message"
+                cols="0"
+                rows="7"
+                class="contact__input"
+              ></textarea>
+            </div>
+            <div>
+              <a href="#" class="button button--flex"
+                >Send Message
+                <i class="fa-regular fa-paper-plane button__icon"></i>
+              </a>
+            </div>
+          </form>
         </div>
       </section>
     </main>
@@ -398,8 +443,8 @@
           </div>
         </div>
 
-        <p class="footer__copy">&#169
-          <span id="footer-year"></span>  Ruthi Nunes. All rights reserved.
+        <p class="footer__copy">
+          <span id="footer-year"></span> Ruthi Nunes. All rights reserved.
         </p>
       </div>
     </footer>
