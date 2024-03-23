@@ -5,6 +5,9 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="icon" type="image/png" href="./frontend/assets/favicon.png" />
+    <!-- ============== axios =============== -->
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+
     <!-- ============== font awesome =============== -->
     <script
       src="https://kit.fontawesome.com/7d3d6eb743.js"
@@ -332,7 +335,9 @@
         <h2 class="section__title">Contact Me</h2>
         <span class="section__subtitle">Get in touch</span>
         <div class="contact__container container">
-          <form action="" class="contact__form grid">
+
+          <!-- ===== form ===== -->
+          <form class="contact__form grid">
             <div class="contact__inputs grid">
               <div class="contact__content">
                 <label for="name" class="contact__label">Name</label>
@@ -368,7 +373,7 @@
               ></textarea>
             </div>
             <div>
-              <a href="#" class="button button--flex"
+              <a href="#" id="form-button" class="button button--flex"
                 >Send Message
                 <i class="fa-regular fa-paper-plane button__icon"></i>
               </a>
