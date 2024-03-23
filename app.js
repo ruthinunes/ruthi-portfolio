@@ -44,7 +44,7 @@ const removeMenuOnClick = (navMenu) => {
 
 const setFooterYear = () => {
   const year = new Date().getFullYear();
-  document.getElementById("footer-year").innerHTML = year;
+  document.getElementById("footer-year").innerHTML = `&#169 ${year}`;
 };
 
 // reusable functions
