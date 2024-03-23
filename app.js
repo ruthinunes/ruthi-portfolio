@@ -50,7 +50,6 @@ const removeClass = (element, className) => {
   element.classList.remove(className);
 };
 
-window.addEventListener("DOMContentLoaded", () => {
-  scrollHeader();
-  displayMenu();
-});
+window.addEventListener("DOMContentLoaded", displayMenu);
+
+window.addEventListener("scroll", scrollHeader);
