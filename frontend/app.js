@@ -123,7 +123,7 @@ const showError = (name, email, project, message) => {
 
 const sendForm = async (contactForm) => {
   await axios
-    .post("http://localhost:3000/api/contacts", contactForm)
+    .post("https://ruthi-portfolio.onrender.com/api/contacts", contactForm)
     .then((res) => console.log(res.data));
 };
 
