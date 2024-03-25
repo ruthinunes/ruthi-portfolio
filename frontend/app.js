@@ -102,7 +102,6 @@ const removeModal = (modal) => {
   const closeButton = document.getElementById("modal-close");
 
   closeButton.addEventListener("click", () => {
-    console.log("Removing");
     removeClass(modal, "show");
   });
 };
@@ -199,6 +198,18 @@ const setFooterYear = () => {
   document.getElementById("footer-year").innerHTML = `&#169 ${year}`;
 };
 
+// --- SCROLL TOP PAGE---
+const scrollTopPage = () => {
+  const scrollUp = document.getElementById("scroll-up");
+  const scrollY = window.scrollY;
+
+  if (scrollY >= 160) {
+    addClass(scrollUp, "show-scroll");
+  } else {
+    removeClass(scrollUp, "show-scroll");
+  }
+};
+
 // *** reusable functions
 const addClass = (element, className) => {
   element.classList.add(className);
@@ -214,10 +225,10 @@ window.addEventListener("DOMContentLoaded", () => {
   setHomeButton();
   setFormButton();
   setFooterYear();
-  // processForm();
 });
 
 window.addEventListener("scroll", () => {
   activeNavLink();
   setHeaderShadow();
+  scrollTopPage();
 });
