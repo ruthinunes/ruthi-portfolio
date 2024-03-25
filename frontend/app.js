@@ -1,4 +1,4 @@
-// *** NAV
+// --- NAV ---
 // open menu mobile
 const displayMenu = () => {
   const navMenu = document.getElementById("nav-menu");
@@ -62,6 +62,7 @@ const updateSections = (current, scrollY) => {
 const isSectionActive = (current, scrollY) => {
   const sectionHeight = current.offsetHeight;
   const sectionTop = current.offsetTop - 50;
+
   return scrollY > sectionTop && scrollY <= sectionTop + sectionHeight;
 };
 
@@ -75,35 +76,38 @@ const toggleActiveClass = (sectionId, isActive) => {
   }
 };
 
-// form
-const processForm = () => {
-  const name = document.getElementById("name");
-  const email = document.getElementById("email");
-  const project = document.getElementById("project");
-  const message = document.getElementById("message");
+// --- FORM ---
+const setFormButton = () => {
   const sendBtn = document.getElementById("form-button");
 
   sendBtn.addEventListener("click", (e) => {
     e.preventDefault();
-    if (
-      name.value !== "" &&
-      project.value !== "" &&
-      message.value !== "" &&
-      validateEmail(email.value)
-    ) {
-      const contactForm = {
-        name: name.value,
-        email: email.value,
-        project: project.value,
-        message: message.value,
-      };
-      sendForm(contactForm);
-      clearFields(name, email, project, message);
-      clearPlaceholders(name, email, project, message);
-    } else {
-      showError(name, email, project, message);
-    }
+    processForm();
   });
+};
+
+const processForm = () => {
+  const { name, email, project, message } = getFormElements();
+
+  if (
+    name.value !== "" &&
+    project.value !== "" &&
+    message.value !== "" &&
+    validateEmail(email.value)
+  ) {
+    const contactData = {
+      name: name.value,
+      email: email.value,
+      project: project.value,
+      message: message.value,
+    };
+
+    sendData(contactData);
+    clearFields();
+    clearPlaceholders();
+  } else {
+    displayError();
+  }
 };
 
 const validateEmail = (email) => {
@@ -111,37 +115,53 @@ const validateEmail = (email) => {
   return emailRegex.test(email);
 };
 
-const showError = (name, email, project, message) => {
-  name.setAttribute("placeholder", "Please enter your name");
-  project.setAttribute("placeholder", "Please enter your project idea");
-  message.setAttribute("placeholder", "Please enter your message");
+const sendData = async (contactData) => {
+  await axios
+    .post("https://ruthi-portfolio.onrender.com/api/contacts", contactData)
+    .then((res) => console.log(res.data));
+};
+
+const displayError = () => {
+  const { name, email, project, message } = getFormElements();
+
   if (!validateEmail(email.value)) {
     email.value = "";
     email.setAttribute("placeholder", "Please enter a valid email");
   }
+  name.setAttribute("placeholder", "Please enter your name");
+  project.setAttribute("placeholder", "Please enter your project idea");
+  message.setAttribute("placeholder", "Please enter your message");
 };
 
-const sendForm = async (contactForm) => {
-  await axios
-    .post("https://ruthi-portfolio.onrender.com/api/contacts", contactForm)
-    .then((res) => console.log(res.data));
-};
+const clearFields = () => {
+  const { name, email, project, message } = getFormElements();
 
-const clearFields = (name, email, project, message) => {
   name.value = "";
   email.value = "";
   project.value = "";
   message.value = "";
 };
 
-const clearPlaceholders = (name, email, project, message) => {
+const clearPlaceholders = () => {
+  const { name, email, project, message } = getFormElements();
+
   name.removeAttribute("placeholder");
   email.removeAttribute("placeholder");
   project.removeAttribute("placeholder");
   message.removeAttribute("placeholder");
 };
 
-// *** FOOTER
+const getFormElements = () => {
+  const elements = {
+    name: document.getElementById("name"),
+    email: document.getElementById("email"),
+    project: document.getElementById("project"),
+    message: document.getElementById("message"),
+  };
+  return elements;
+};
+
+// --- FOOTER ---
 // automatically update footer year
 const setFooterYear = () => {
   const year = new Date().getFullYear();
@@ -157,10 +177,12 @@ const removeClass = (element, className) => {
   element.classList.remove(className);
 };
 
+// events
 window.addEventListener("DOMContentLoaded", () => {
-  setFooterYear();
   displayMenu();
-  processForm();
+  setFormButton();
+  setFooterYear();
+  // processForm();
 });
 
 window.addEventListener("scroll", () => {
