@@ -122,15 +122,33 @@
                 2 years of experience in web development knowledge, producing
                 quality work.
               </p>
-              <a
-                href="./frontend/assets/nunesCV.pdf"
-                class="button button--flex"
-                target="_blank"
-              >
-                Download CV<i
-                  class="fa-solid fa-cloud-arrow-down button__icon"
-                ></i>
-              </a>
+              <div class="home__button" id="home-button">
+                <a href="#" class="button button--flex">
+                  Download CV<i
+                    class="fa-solid fa-cloud-arrow-down button__icon"
+                  ></i>
+                </a>
+                <div class="modal__cv" id="modal-cv">
+                  <i
+                    class="fa-solid fa-xmark modal__icon modal__close"
+                    id="modal-close"
+                  ></i>
+                  <div class="modal__links">
+                    <a
+                      href="./frontend/assets/nunesCV-pt.pdf"
+                      class=""
+                      target="_blank"
+                      >Portuguese</a
+                    >
+                    <a
+                      href="./frontend/assets/nunesCV-en.pdf"
+                      class=""
+                      target="_blank"
+                      >English</a
+                    >
+                  </div>
+                </div>
+              </div>
             </div>
           </div>
         </div>
@@ -335,7 +353,6 @@
         <h2 class="section__title">Contact Me</h2>
         <span class="section__subtitle">Get in touch</span>
         <div class="contact__container container">
-
           <!-- ===== form ===== -->
           <form class="contact__form grid">
             <div class="contact__inputs grid">

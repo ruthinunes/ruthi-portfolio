@@ -76,6 +76,37 @@ const toggleActiveClass = (sectionId, isActive) => {
   }
 };
 
+// --- HOME BUTTON ---
+const setHomeButton = () => {
+  const homeButton = document.querySelector("#home-button");
+  const closeModal = document.querySelector("#modal-close");
+  const modal = document.querySelector("#modal-cv");
+
+  homeButton.addEventListener("click", () => {
+    addClass(modal, "show-modal");
+  });
+
+  closeModal.addEventListener("click", (e) => {
+    e.stopPropagation();
+    removeClass(modal, "show-modal");
+  });
+};
+
+const displayModal = () => {
+  const modal = document.getElementById("modal-cv");
+  addClass(modal, "show");
+  removeModal(modal);
+};
+
+const removeModal = (modal) => {
+  const closeButton = document.getElementById("modal-close");
+
+  closeButton.addEventListener("click", () => {
+    console.log("Removing");
+    removeClass(modal, "show");
+  });
+};
+
 // --- FORM ---
 const setFormButton = () => {
   const sendBtn = document.getElementById("form-button");
@@ -180,6 +211,7 @@ const removeClass = (element, className) => {
 // events
 window.addEventListener("DOMContentLoaded", () => {
   displayMenu();
+  setHomeButton();
   setFormButton();
   setFooterYear();
   // processForm();

@@ -338,6 +338,10 @@ nav {
   margin-bottom: var(--mb-32);
 }
 
+.home__button {
+  position: relative;
+}
+
 .home__scroll {
   display: none;
 }
@@ -360,6 +364,48 @@ nav {
   color: var(--title-color);
   font-weight: var(--font-medium);
   margin: 0 1rem;
+}
+
+/*=================== modal cv ===================*/
+.modal__cv {
+  display: none;
+  transition: opacity 0.5s ease;
+  top: 0;
+  position: absolute;
+  margin-top: 0.8rem;
+  width: 150px;
+  border-radius: 0.8rem;
+  padding: 0.8rem 1.6rem;
+  background-color: var(--container-color);
+  box-shadow: rgba(0, 0, 0, 0.25) 0px 10px 20px,
+    rgba(25, 24, 24, 0.3) 0px 6px 6px;
+  border-radius: 10px;
+}
+
+.show-modal {
+  opacity: 0.9;
+  display: flex;
+  flex-direction: column;
+}
+
+.modal__icon {
+  margin: 0 0 0 auto;
+}
+
+.modal__icon:hover {
+  cursor: pointer;
+  color: var(--first-color);
+}
+
+.modal__links {
+  text-decoration: underline;
+  gap: 0.8rem;
+  display: flex;
+  flex-direction: column;
+}
+
+.modal__links > a:hover {
+  color: var(--first-color);
 }
 
 /*=================== portfolio ===================*/
