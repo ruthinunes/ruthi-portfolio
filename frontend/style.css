@@ -23,6 +23,7 @@
 
   /*======== Font and typograph ========*/
   --body-font: "Poppins", sans-serif;
+  --big-font-size: 3.2rem;
   --h1-font-size: 2.4rem;
   --h3-font-size: 1.8rem;
   --normal-font-size: 1.5rem;
@@ -321,7 +322,7 @@ nav {
 }
 
 .home__title {
-  font-size: var(--h1-font-size);
+  font-size: var(--big-font-size);
   margin-bottom: var(--mb-4);
   text-shadow: 1px 1px 5px #e1bc57;
 }
