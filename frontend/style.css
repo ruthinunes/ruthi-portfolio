@@ -345,12 +345,10 @@ nav {
 /*=================== modal cv ===================*/
 .modal__cv {
   display: none;
-  transition: opacity 0.5s ease;
   top: 0;
   position: absolute;
   margin-top: 0.8rem;
-  width: 150px;
-  border-radius: 0.8rem;
+  width: 160px;
   padding: 0.8rem 1.6rem;
   background-color: var(--container-color);
   box-shadow: rgba(0, 0, 0, 0.25) 0px 10px 20px,
@@ -359,13 +357,14 @@ nav {
 }
 
 .show-modal {
-  opacity: 0.9;
   display: flex;
   flex-direction: column;
+  opacity: 0.9;
 }
 
 .modal__icon {
-  margin: 0 0 0 auto;
+  margin: var(--mb-4) 0 0 auto;
+  font-size: 1.9rem;
 }
 
 .modal__icon:hover {
