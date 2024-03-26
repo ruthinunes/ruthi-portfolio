@@ -80,7 +80,7 @@ const toggleActiveClass = (sectionId, isActive) => {
 const setHomeButton = () => {
   const homeButton = document.querySelector("#home-button");
   const closeModal = document.querySelector("#modal-close");
-  const modal = document.querySelector("#modal-cv");
+  const modal = document.querySelector("#button-modal");
 
   homeButton.addEventListener("click", () => {
     addClass(modal, "show-modal");
@@ -93,7 +93,8 @@ const setHomeButton = () => {
 };
 
 const displayModal = () => {
-  const modal = document.getElementById("modal-cv");
+  const modal = document.getElementById("button-modal");
+  
   addClass(modal, "show");
   removeModal(modal);
 };
@@ -158,7 +159,8 @@ const sendData = async (contactData) => {
 };
 
 const setSuccedStatus = () => {
-  const modal = document.querySelector(".contact__modal");
+  const modal = document.querySelector(".form__modal");
+
   modal.style.display = "block";
 
   setTimeout(() => {
@@ -169,11 +171,12 @@ const setSuccedStatus = () => {
 };
 
 const setErrorStatus = () => {
-  const modal = document.querySelector(".contact__modal ");
-  const modalText = document.querySelector(".contact__modal p");
+  const modal = document.querySelector(".form__modal");
+  const description = document.querySelector(".form__modal p");
+
   modal.style.display = "block";
-  modalText.style.color = "#fe99ac";
-  modalText.innerHTML = `Error! Try send again.`;
+  description.style.color = "#fe99ac";
+  description.innerHTML = `Error! Try send again.`;
 
   setTimeout(() => {
     modal.style.display = "none";

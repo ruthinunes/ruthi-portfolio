@@ -136,6 +136,16 @@ img {
   gap: 2.4rem;
 }
 
+.modal {
+  display: none;
+  opacity: 0.9;
+  position: absolute;
+  background-color: var(--container-color);
+  box-shadow: rgba(0, 0, 0, 0.25) 0px 10px 20px,
+    rgba(25, 24, 24, 0.3) 0px 6px 6px;
+  border-radius: 10px;
+}
+
 /*=================== buttons ===================*/
 .button {
   cursor: pointer;
@@ -251,18 +261,10 @@ nav {
   color: var(--first-color-alt);
 }
 
-@media screen and (max-width: 767px) {
-  .nav__menu {
-    position: fixed;
-    bottom: -100%;
-    left: 0;
-    width: 100%;
-    background-color: var(--body-color);
-    padding: 3.2rem;
-    box-shadow: 0 -1px 4px rgba(0, 0, 0, 0.15);
-    border-radius: 2.4rem 2.4rem 0 0;
-    transition: bottom 0.3s ease;
-  }
+.nav__btns {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
 }
 
 /* Show menu */
@@ -275,10 +277,18 @@ nav {
   color: var(--first-color);
 }
 
-.nav__btns {
-  display: flex;
-  align-items: center;
-  gap: 1rem;
+@media screen and (max-width: 767px) {
+  .nav__menu {
+    position: fixed;
+    bottom: -100%;
+    left: 0;
+    width: 100%;
+    background-color: var(--body-color);
+    padding: 3.2rem;
+    box-shadow: 0 -1px 4px rgba(0, 0, 0, 0.15);
+    border-radius: 2.4rem 2.4rem 0 0;
+    transition: bottom 0.3s ease;
+  }
 }
 
 /*=================== home ===================*/
@@ -343,33 +353,11 @@ nav {
 }
 
 /*=================== modal cv ===================*/
-.modal__cv {
-  display: none;
+.button__modal {
   top: 0;
-  position: absolute;
   margin-top: 0.8rem;
   width: 160px;
   padding: 0.8rem 1.6rem;
-  background-color: var(--container-color);
-  box-shadow: rgba(0, 0, 0, 0.25) 0px 10px 20px,
-    rgba(25, 24, 24, 0.3) 0px 6px 6px;
-  border-radius: 10px;
-}
-
-.modal {
-  display: none;
-  opacity: 0.9;
-  position: absolute;
-  background-color: var(--container-color);
-  box-shadow: rgba(0, 0, 0, 0.25) 0px 10px 20px,
-    rgba(25, 24, 24, 0.3) 0px 6px 6px;
-  border-radius: 10px;
-}
-
-.show-modal {
-  display: flex;
-  flex-direction: column;
-  opacity: 0.9;
 }
 
 .modal__icon {
@@ -391,6 +379,13 @@ nav {
 
 .modal__links > a:hover {
   color: var(--first-color);
+}
+
+/* Show modal */
+.show-modal {
+  display: flex;
+  flex-direction: column;
+  opacity: 0.9;
 }
 
 /*=================== portfolio ===================*/
@@ -495,7 +490,7 @@ nav {
 }
 
 /*=== contact modal ===*/
-.contact__modal {
+.form__modal {
   color: var(--title-color);
   width: 200px;
   height: 100px;
