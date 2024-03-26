@@ -76,6 +76,15 @@ const toggleActiveClass = (sectionId, isActive) => {
   }
 };
 
+// theme
+const setChangeTheme = () => {
+  const themeButton = document.getElementById("theme-button");
+
+  themeButton.addEventListener("click", () => {
+    document.documentElement.classList.toggle("light-theme");
+  });
+};
+
 // --- HOME BUTTON ---
 const setHomeButton = () => {
   const homeButton = document.querySelector("#home-button");
@@ -94,7 +103,7 @@ const setHomeButton = () => {
 
 const displayModal = () => {
   const modal = document.getElementById("button-modal");
-  
+
   addClass(modal, "show");
   removeModal(modal);
 };
@@ -254,6 +263,7 @@ const removeClass = (element, className) => {
 // events
 window.addEventListener("DOMContentLoaded", () => {
   displayMenu();
+  setChangeTheme();
   setHomeButton();
   setFormButton();
   setFooterYear();
