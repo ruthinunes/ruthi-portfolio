@@ -267,11 +267,6 @@ nav {
   gap: 1rem;
 }
 
-/* Show menu */
-.show-menu {
-  bottom: 0;
-}
-
 /* active link */
 .active-link {
   color: var(--first-color);
@@ -289,6 +284,10 @@ nav {
     border-radius: 2.4rem 2.4rem 0 0;
     transition: bottom 0.3s ease;
   }
+}
+/* Show menu */
+.show-menu {
+  bottom: 0;
 }
 
 /*=================== home ===================*/
