@@ -146,7 +146,7 @@ const validateEmail = (email) => {
 const sendData = async (contactData) => {
   try {
     await axios.post(
-      "https://ruthi-portfolio.onrendr.com/api/contacts",
+      "https://ruthi-portfolio.onrender.com/api/contacts",
       contactData
     );
     // .then((res) => console.log(res.data));
