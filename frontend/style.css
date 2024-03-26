@@ -190,7 +190,7 @@ img {
   box-shadow: 0 -1px 4px var(--first-color);
 }
 
-/* nav */
+/*=================== nav ===================*/
 nav {
   max-width: 968px;
   height: var(--header-heigth);
@@ -356,6 +356,16 @@ nav {
   border-radius: 10px;
 }
 
+.modal {
+  display: none;
+  opacity: 0.9;
+  position: absolute;
+  background-color: var(--container-color);
+  box-shadow: rgba(0, 0, 0, 0.25) 0px 10px 20px,
+    rgba(25, 24, 24, 0.3) 0px 6px 6px;
+  border-radius: 10px;
+}
+
 .show-modal {
   display: flex;
   flex-direction: column;
@@ -435,6 +445,7 @@ nav {
 .contact__container {
   justify-items: center;
   gap: 3.2rem;
+  position: relative;
 }
 
 .contact__information {
@@ -481,6 +492,19 @@ nav {
   border: none;
   outline: none;
   padding: 0.4rem 0.8rem 0.8rem 0;
+}
+
+/*=== contact modal ===*/
+.contact__modal {
+  color: var(--title-color);
+  width: 200px;
+  height: 100px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  text-align: center;
+  line-height: 100px;
 }
 
 /*=================== footer ===================*/

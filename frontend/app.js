@@ -133,8 +133,6 @@ const processForm = () => {
     };
 
     sendData(contactData);
-    clearFields();
-    clearPlaceholders();
   } else {
     displayError();
   }
@@ -146,9 +144,40 @@ const validateEmail = (email) => {
 };
 
 const sendData = async (contactData) => {
-  await axios
-    .post("https://ruthi-portfolio.onrender.com/api/contacts", contactData)
-    .then((res) => console.log(res.data));
+  try {
+    await axios.post(
+      "https://ruthi-portfolio.onrendr.com/api/contacts",
+      contactData
+    );
+    // .then((res) => console.log(res.data));
+    setSuccedStatus();
+  } catch (error) {
+    setErrorStatus();
+    // console.log(error);
+  }
+};
+
+const setSuccedStatus = () => {
+  const modal = document.querySelector(".contact__modal");
+  modal.style.display = "block";
+
+  setTimeout(() => {
+    modal.style.display = "none";
+  }, 2000);
+  clearFields();
+  clearPlaceholders();
+};
+
+const setErrorStatus = () => {
+  const modal = document.querySelector(".contact__modal ");
+  const modalText = document.querySelector(".contact__modal p");
+  modal.style.display = "block";
+  modalText.style.color = "#fe99ac";
+  modalText.innerHTML = `Error! Try send again.`;
+
+  setTimeout(() => {
+    modal.style.display = "none";
+  }, 3000);
 };
 
 const displayError = () => {
