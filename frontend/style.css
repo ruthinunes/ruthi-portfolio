@@ -304,8 +304,6 @@ nav {
 
 /*=================== theme button ===================*/
 .theme {
-  /* border: 1px solid red; */
-  /* margin-bottom: 3rem; */
   width: 28px;
 }
 
@@ -325,7 +323,6 @@ nav {
 }
 
 .theme__label .theme__check-tag {
-  /* background-color: white; */
   background-color: var(--body-color);
   border-radius: 50%;
   height: 10px;
@@ -371,7 +368,6 @@ nav {
 
 .home__blob {
   fill: var(--first-color);
-  /* width: 350px; */
 }
 
 .home__data {
@@ -534,6 +530,10 @@ nav {
   border: none;
   outline: none;
   padding: 0.4rem 0.8rem 0.8rem 0;
+}
+
+input:-webkit-autofill {
+  background-color: var(--input-color);
 }
 
 /*=== contact modal ===*/
