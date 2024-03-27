@@ -264,7 +264,7 @@ nav {
 .nav__close {
   position: absolute;
   right: 2rem;
-  bottom: 0.8rem;
+  top: 0.8rem;
   font-size: 2.4rem;
   cursor: pointer;
 }
