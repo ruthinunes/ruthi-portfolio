@@ -856,6 +856,5 @@ input:-webkit-autofill {
     grid-template-columns: repeat(3, 1fr);
     column-gap: 2.4rem;
     max-width: 1200px;
-    margin: 0 2.4rem;
   }
 }
