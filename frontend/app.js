@@ -155,7 +155,10 @@ const validateEmail = (email) => {
 
 const sendData = async (contactData) => {
   try {
-    await axios.post("https://ruthi-portfolio.onrender.com/api/contacts", contactData);
+    await axios.post(
+      "https://ruthi-portfolio.onrender.com/api/contacts",
+      contactData
+    );
     // .then((res) => console.log(res.data));
     setSuccedStatus();
   } catch (error) {
@@ -257,7 +260,19 @@ const removeClass = (element, className) => {
   element.classList.remove(className);
 };
 
+// function to active server and avoid delay requests
+const activeServer = async () => {
+  try {
+    await axios.get("https://ruthi-portfolio.onrender.com/api/ping");
+    console.log("Servidor acordado com sucesso.");
+  } catch (error) {
+    console.error("Erro ao acordar o servidor:", error);
+  }
+};
+
 // events
+window.onload = activeServer;
+
 window.addEventListener("DOMContentLoaded", () => {
   displayMenu();
   setChangeTheme();

@@ -16,6 +16,11 @@ const transporter = nodemailer.createTransport({
   },
 });
 
+// router to check server healthy
+router.get("/ping", (req, res) => {
+  res.status(200).send("Server is healthy!");
+});
+
 router.post("/contacts", async (req, res) => {
   try {
     // database
