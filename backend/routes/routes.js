@@ -16,9 +16,9 @@ const transporter = nodemailer.createTransport({
   },
 });
 
-// router to check server healthy
+// router to initialize server
 router.get("/ping", (req, res) => {
-  res.status(200).send("Server is healthy!");
+  res.status(200).send("Server initialized!");
 });
 
 router.post("/contacts", async (req, res) => {

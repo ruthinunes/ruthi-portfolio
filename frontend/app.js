@@ -1,3 +1,13 @@
+// function to active server and avoid delay requests
+const activeServer = async () => {
+  try {
+    await axios.get("https://ruthi-portfolio.onrender.com/api/ping");
+    // console.log("Fisrt request send to server.");
+  } catch (error) {
+    console.error("Error in send first request:", error);
+  }
+};
+
 // --- NAV ---
 // open menu mobile
 const displayMenu = () => {
@@ -258,16 +268,6 @@ const addClass = (element, className) => {
 
 const removeClass = (element, className) => {
   element.classList.remove(className);
-};
-
-// function to active server and avoid delay requests
-const activeServer = async () => {
-  try {
-    await axios.get("https://ruthi-portfolio.onrender.com/api/ping");
-    console.log("Servidor acordado com sucesso.");
-  } catch (error) {
-    console.error("Erro ao acordar o servidor:", error);
-  }
 };
 
 // events
