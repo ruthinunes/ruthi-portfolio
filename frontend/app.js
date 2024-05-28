@@ -155,7 +155,7 @@ const validateEmail = (email) => {
 
 const sendData = async (contactData) => {
   try {
-    await axios.post("https://ruthinunes.com/api/contacts", contactData);
+    await axios.post("https://www.ruthinunes.com/api/contacts", contactData);
     // .then((res) => console.log(res.data));
     setSuccedStatus();
   } catch (error) {
