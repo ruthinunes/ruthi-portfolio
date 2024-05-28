@@ -101,7 +101,8 @@ const setHomeButton = () => {
   const closeModal = document.querySelector("#modal-close");
   const modal = document.querySelector("#button-modal");
 
-  homeButton.addEventListener("click", () => {
+  homeButton.addEventListener("click", (e) => {
+    e.preventDefault();
     addClass(modal, "show-modal");
   });
 
