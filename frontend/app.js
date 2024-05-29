@@ -165,6 +165,8 @@ const validateEmail = (email) => {
 };
 
 const sendData = async (contactData) => {
+  displayStatusModal(".status__loading", "Enviando");
+
   try {
     await axios.post(
       "https://ruthi-portfolio.onrender.com/api/contacts",
@@ -174,33 +176,51 @@ const sendData = async (contactData) => {
     setSuccedStatus();
   } catch (error) {
     setErrorStatus();
-    // console.log(error);
+    console.log(error);
   }
 };
 
-const setSuccedStatus = () => {
-  const modal = document.querySelector(".form__modal");
+const displayStatusModal = (element, message) => {
+  const modal = document.querySelector(".modal__status");
+  const statusMessage = document.querySelector(".status__message");
+  const animation = document.querySelector(element);
 
-  modal.style.display = "block";
+  addClass(modal, "show-modal");
+  displayElement(animation);
+  statusMessage.innerHTML = message;
+};
+
+const setSuccedStatus = () => {
+  const modal = document.querySelector(".modal__status");
+  const loadingAnimation = document.querySelector(".status__loading");
+  const successAnimation = document.querySelector(".status__success svg");
+
+  hiddeElement(loadingAnimation);
+  displayStatusModal(".status__success svg", "Mensagem enviada!");
 
   setTimeout(() => {
-    modal.style.display = "none";
+    hiddeElement(successAnimation);
+    removeClass(modal, "show-modal");
+    clearPlaceholders();
   }, 2000);
   clearFields();
-  clearPlaceholders();
 };
 
 const setErrorStatus = () => {
-  const modal = document.querySelector(".form__modal");
-  const description = document.querySelector(".form__modal p");
+  const modal = document.querySelector(".modal__status");
+  const loadingAnimation = document.querySelector(".status__loading");
+  const errorAnimation = document.querySelector(".status__error svg");
 
-  modal.style.display = "block";
-  description.style.color = "#fe99ac";
-  description.innerHTML = `Error! Try send again.`;
+  hiddeElement(loadingAnimation);
+  displayStatusModal(
+    ".status__error svg",
+    `Error ao enviar!<br/> Tente novamente.`
+  );
 
   setTimeout(() => {
-    modal.style.display = "none";
-  }, 3000);
+    hiddeElement(errorAnimation);
+    removeClass(modal, "show-modal");
+  }, 2000);
 };
 
 const displayError = () => {
@@ -269,6 +289,14 @@ const addClass = (element, className) => {
 
 const removeClass = (element, className) => {
   element.classList.remove(className);
+};
+
+const displayElement = (element) => {
+  element.style.display = "block";
+};
+
+const hiddeElement = (element) => {
+  element.style.display = "none";
 };
 
 // events
