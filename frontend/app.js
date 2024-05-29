@@ -272,7 +272,10 @@ const removeClass = (element, className) => {
 };
 
 // events
-window.onload = activeServer;
+window.onload = () => {
+  activeServer();
+  setInterval(activeServer, 30000);
+};
 
 window.addEventListener("DOMContentLoaded", () => {
   displayMenu();
