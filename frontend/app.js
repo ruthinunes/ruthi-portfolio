@@ -308,9 +308,9 @@ window.onload = () => {
 window.addEventListener("DOMContentLoaded", () => {
   displayMenu();
   setChangeTheme();
-  setHomeButton();
   setFormButton();
   setFooterYear();
+  // setHomeButton();
 });
 
 window.addEventListener("scroll", () => {
