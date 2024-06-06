@@ -96,36 +96,37 @@ const setChangeTheme = () => {
 };
 
 // --- HOME BUTTON ---
-const setHomeButton = () => {
-  const homeButton = document.querySelector("#home-button");
-  const closeModal = document.querySelector("#modal-close");
-  const modal = document.querySelector("#button-modal");
+// const setHomeButton = () => {
+//   const homeButton = document.querySelector("#home-button");
+//   const closeModal = document.querySelector("#modal-close");
+//   const modal = document.querySelector("#button-modal");
 
-  homeButton.addEventListener("click", (e) => {
-    e.preventDefault();
-    addClass(modal, "show-modal");
-  });
+//   homeButton.addEventListener("click", (e) => {
+//     e.preventDefault();
+//     addClass(modal, "show-modal");
+//   });
 
-  closeModal.addEventListener("click", (e) => {
-    e.stopPropagation();
-    removeClass(modal, "show-modal");
-  });
-};
+//   closeModal.addEventListener("click", (e) => {
+//     e.stopPropagation();
+//     removeClass(modal, "show-modal");
+//   });
+// };
 
-const displayModal = () => {
-  const modal = document.getElementById("button-modal");
+// const displayModal = () => {
+//   const modal = document.getElementById("button-modal");
 
-  addClass(modal, "show");
-  removeModal(modal);
-};
+//   addClass(modal, "show");
+//   removeModal(modal);
+// };
 
-const removeModal = (modal) => {
-  const closeButton = document.getElementById("modal-close");
+// const removeModal = (modal) => {
+//   const closeButton = document.getElementById("modal-close");
 
-  closeButton.addEventListener("click", () => {
-    removeClass(modal, "show");
-  });
-};
+//   closeButton.addEventListener("click", () => {
+//     removeClass(modal, "show");
+//   });
+// };
+
 
 // --- FORM ---
 const setFormButton = () => {
