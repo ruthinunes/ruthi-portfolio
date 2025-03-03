@@ -7,7 +7,7 @@ const app = express();
 const port = process.env.PORT || 3000;
 
 app.use(express.json());
-app.use(cors({ origin: "https://ruthinunes.com" }));
+app.use(cors({ origin: "https://ruthinunes.tech" }));
 app.use("/api", routerUrls);
 
 dotenv.config();
